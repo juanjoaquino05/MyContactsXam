@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyContactsXam.Views.ContactsPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="microsoft.png" Text="Item 1" Priority="0" />
+        <!--<ToolbarItem Name="MenuItem2" Order="Primary" Icon="Xamarin.png" Text="Item 2" Priority="1" />-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding ContactsPage}">
+            <ListView ItemsSource="{Binding Contacts}" SelectedItem="{Binding SelectedContact}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#eee"
+                            Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Name}"
+                                    TextColor="#f35e20" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding Number}"
+                                    HorizontalOptions="CenterAndExpand"
+                                    TextColor="#503026"  />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>    
+    </ContentPage.Content>
+
+</ContentPage>

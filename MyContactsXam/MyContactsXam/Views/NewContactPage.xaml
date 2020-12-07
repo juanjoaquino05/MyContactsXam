@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyContactsXam.Views.NewContactPage"
+             Title="New User"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+
+        <StackLayout >
+            <Label Text="Name" />
+        <Entry BindingContext="{Binding Name, Mode=TwoWay}"/>
+
+            <Label Text="Number" />
+        <Entry BindingContext="{Binding Number, Mode=TwoWay }" />
+
+        <Button Text="Add" Command="{ Binding NewContactPage }"/>
+
+        </StackLayout>
+        <!--<Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+<Label Text="Name"  Grid.Column="0" Grid.Row="0"/>
+            <Entry Grid.Column="1" Grid.Row="0" />
+
+            <Label Text="Number" Grid.Column="0" Grid.Row="1" />
+            <Entry Grid.Column="1" Grid.Row="1" />
+
+            <Button Text="Add" Grid.Column="1" Grid.Row="2" />
+            
+        </Grid>-->
+</ContentPage>
